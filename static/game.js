@@ -34,7 +34,7 @@ document.addEventListener('keydown', function(event)
 }
 );
 
-document.addEventListener('keyup', function(event))
+document.addEventListener('keyup', function(event)
 {
 	var key = event.keyCode;
 	
@@ -54,8 +54,7 @@ document.addEventListener('keyup', function(event))
 	{
 		movement.down = false;
 	}
-}
-
+});
 socket.emit('new player');
 setInterval(function() {
   socket.emit('movement', movement);
