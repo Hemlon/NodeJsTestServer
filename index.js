@@ -1,9 +1,9 @@
 // Dependencies
-var express = require('express');
+//var express = require('express');
 var http = require('http');
-var path = require('path');
+//var path = require('path');
 var socketIO = require('socket.io');
-var app = express();
+//var app = express();
 //var server = http.Server(app);
 
 var server = http.createServer(function(request, response) {
@@ -15,7 +15,7 @@ var server = http.createServer(function(request, response) {
 
 var portnumber = 1337;
 var io = socketIO(server);
-app.set('port', portnumber);
+//app.set('port', portnumber);
 
 /*
 app.use('/static', express.static(__dirname + '/static'));
