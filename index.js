@@ -5,14 +5,6 @@ var path = require('path');
 var socketIO = require('socket.io');
 var app = express();
 var server = http.Server(app);
-
-var server = http.createServer(function(request, response) {
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
-
-});
-
 var portnumber = 1337;
 var io = socketIO(server);
 app.set('port', portnumber);
