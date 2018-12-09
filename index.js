@@ -8,23 +8,26 @@ var server = http.Server(app);
 var io = socketIO(server);
 app.set('port', 1337);
 app.use('/static', express.static(__dirname + '/static'));
-
 // Routing
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
 
+
 var port = process.env.PORT || 1337;
 server.listen(port, function() {console.log('starting server on ' + port)});
 
-console.log("Server running at port:%d", port);
+console.log("Server running at http://localhost:%d", port);
+
+io.on('connection', function(socket) {
+});
 
 setInterval(function() {
 	io.sockets.emit('message', 'hi!');
 }, 1000);
 
-var players = {};
 
+var players = {};
 io.on('connection', function(socket) {
   socket.on('new player', function() {
     players[socket.id] = {
