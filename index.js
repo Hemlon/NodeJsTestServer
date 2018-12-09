@@ -8,12 +8,14 @@ var server = http.Server(app);
 var io = socketIO(server);
 app.set('port', 443);
 
+/*
 app.use('/static', express.static(__dirname + '/static'));
 
 // Routing
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
+*/
 
 var port = process.env.PORT || 443;
 server.listen(port, function() {console.log('starting server on ' + port)});
