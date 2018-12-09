@@ -2,7 +2,7 @@
 //var express = require('express');
 var http = require('http');
 //var path = require('path');
-var socketIO = require('socket.io');
+//var socketIO = require('socket.io');
 //var app = express();
 //var server = http.Server(app);
 
@@ -14,7 +14,7 @@ var server = http.createServer(function(request, response) {
 });
 
 var portnumber = 1337;
-var io = socketIO(server);
+//var io = socketIO(server);
 //app.set('port', portnumber);
 
 /*
@@ -31,6 +31,7 @@ server.listen(port);
 
 console.log("Server running at %d", port);
 
+/*
 setInterval(function() {
 	io.sockets.emit('message', 'hi!');
 }, 1000);
@@ -65,4 +66,4 @@ setInterval(function() {
   io.sockets.emit('state', players);
 }, 1000 / 60);
 
-
+*/
