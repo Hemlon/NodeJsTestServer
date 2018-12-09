@@ -34,6 +34,28 @@ document.addEventListener('keydown', function(event)
 }
 );
 
+document.addEventListener('keyup', function(event))
+{
+	var key = event.keyCode;
+	
+	if (key == 65)
+	{
+		movement.left = false;
+	}
+	else if (key == 87)
+	{
+		movement.up = false;
+	}
+	else if (key == 68)
+	{
+		movement.right = false;
+	}
+	else if (key == 83)
+	{
+		movement.down = false;
+	}
+}
+
 socket.emit('new player');
 setInterval(function() {
   socket.emit('movement', movement);
