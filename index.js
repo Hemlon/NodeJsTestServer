@@ -6,15 +6,16 @@ var socketIO = require('socket.io');
 var app = express();
 var server = http.Server(app);
 var io = socketIO(server);
-app.set('port', 1337);
+app.set('port', 8080);
 
 app.use('/static', express.static(__dirname + '/static'));
+
 // Routing
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
 
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 8080;
 server.listen(port, function() {console.log('starting server on ' + port)});
 
 console.log("Server running at :%d", port);
