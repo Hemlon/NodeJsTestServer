@@ -1,4 +1,4 @@
-/*
+
 var socket = io();
 
 
@@ -90,7 +90,6 @@ socket.on('projectiles', function(data) {
 	   projectiles = data;
 });
 
-*/
 
 
 

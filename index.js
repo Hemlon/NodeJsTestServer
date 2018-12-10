@@ -27,9 +27,6 @@ server.listen(portnum , function() {
 });
 
 
-/**/
-
-/*
 var math = {
     upper: function(value, limit) { 
         if(value > limit) {
@@ -153,13 +150,13 @@ var projectiles = [];
 
 
 
-*/
 
 
 
 
 
-/*
+
+
 setInterval(function() {
   io.sockets.emit('message', 'server is still running');
 }, 1000);
@@ -241,5 +238,4 @@ setInterval(function() {
    io.sockets.emit('state', players);
 }, 1000 / 60);
 
-*/
 
