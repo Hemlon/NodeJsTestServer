@@ -36,6 +36,7 @@ Hammer(element).on("press", function () {
 function getClickPosition(e) {
     mouseDat.x = e.clientX;
     mouseDat.y = e.clientY;
+	mouseDat.isPressed = true;
 }
 
 var keyPressed = function() 
