@@ -83,7 +83,7 @@ this.draw = function(){
 	textSize(15);
 	fill(255,255,255);
 	text("Mr Hem's Multiplayer Node.JS test", 40,20);
-	text(mouseDat.x + "," + mouseDat.y, 100,100);
+//	text(mouseDat.x + "," + mouseDat.y, 100,100);
 };
 
 //received updated client states
