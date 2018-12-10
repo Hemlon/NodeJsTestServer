@@ -198,6 +198,11 @@ socket.on('keys', function(data) {
 		}
 		mouse.isSwiped = false;
 	}
+	else
+	{
+		mouseDat.x = player.x;
+		mouseDat.y = player.y;
+	}
 });
 
 socket.on('mouse', function(data) {
@@ -207,8 +212,7 @@ socket.on('mouse', function(data) {
 	
 	if(data.isPressed && player.x != data.x && player.y != data.y)
 	{
-		motion.follow(player,data.x, data.y, playerSpd);
-		
+		motion.follow(player,data.x, data.y, playerSpd);	
 	}
 	else
 	{
