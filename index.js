@@ -204,10 +204,15 @@ socket.on('mouse', function(data) {
 	
     var player = players[socket.id] || {};
 	mouse = data;
+	
 	if(data.isPressed && player.x != data.x && player.y != data.y)
 	{
 		motion.follow(player,data.x, data.y, playerSpd);
-	
+		
+	}
+	else
+	{
+		data.isPressed = false;
 	}
 	
 	if(data.isSwiped)
