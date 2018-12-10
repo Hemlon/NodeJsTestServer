@@ -1,7 +1,4 @@
-//var express = require('express');
-var http = require('http');
-//var path = require('path');
-//var socketIO = require('socket.io');
+
 
 /*
 var math = {
@@ -125,12 +122,22 @@ var projectile = function() {
 var projectiles = [];
 
 
+
+
+*/
+
+
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var socketIO = require('socket.io');
+var server = http.Server(app);
 var app = express();
-
 var io = socketIO(server);
+var portnum = 5000;
 
-var portnum = 3000;
-app.set('port', portnum );
+// Starts the server.
+app.set('port', portnum);
 app.use('/static', express.static(__dirname + '/static'));
 
 // Routing
@@ -138,13 +145,12 @@ app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
 
-*/
-
-var server = http.Server(app);
-// Starts the server.
 server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
 });
+
+
+
 
 
 /*
