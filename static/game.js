@@ -30,12 +30,10 @@ Hammer(element).on("press", function () {
 	//mouseDat.isPressed = true;
 });
 
-//element.addEventListener("click", getClickPosition, false);
+element.addEventListener("click", getClickPosition, false);
 
 //When the click happens, we have an event handler that will react to that click:
 function getClickPosition(e) {
-    mouseDat.x = e.clientX;
-    mouseDat.y = e.clientY;
 	mouseDat.isPressed = true;
 }
 
@@ -58,7 +56,7 @@ setInterval(function() {
 setInterval(function() {
 	mouseDat.x = mouseX;
 	mouseDat.y = mouseY;
-	mouseDat.isPressed = mouseIsPressed
+	//mouseDat.isPressed = mouseIsPressed
 	socket.emit('mouse', mouseDat);	
 	mouseDat.isSwiped = false;
 }
