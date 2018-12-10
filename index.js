@@ -1,3 +1,16 @@
+var http = require('http');
+
+var server = http.createServer(function(request, response) {
+
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello World!");
+
+});
+
+var port = process.env.PORT || 1337;
+server.listen(port);
+
+console.log("Server running at http://localhost:%d", port);
 
 
 /*
@@ -126,7 +139,7 @@ var projectiles = [];
 
 */
 
-
+/*
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -136,7 +149,7 @@ var app = express();
 var io = socketIO(server);
 var portnum = 5000;
 
-/*
+
 // Starts the server.
 app.set('port', portnum);
 app.use('/static', express.static(__dirname + '/static'));
@@ -145,12 +158,12 @@ app.use('/static', express.static(__dirname + '/static'));
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
-*/
+
 
 server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
 });
-
+*/
 
 
 
