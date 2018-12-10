@@ -4,6 +4,9 @@ socket.on('message', function(data) {
 	console.log(data);
 });
 
+
+
+
 var movement = {
 	up: false,
 	down: false,
@@ -12,8 +15,24 @@ var movement = {
 }
 
 var players = {};
-
+var projectiles = {};
 var keys = {};
+
+var mouseDat = {
+	x: 0,
+	y: 0,
+	isPressed: false,
+	isSwiped: false
+}
+
+var element = document.getElementsByTagName('BODY')[0];
+	Hammer(element).on("swipe", function () {	
+		 mouseDat.isSwiped = true;
+});
+
+
+
+
 
 var keyPressed = function() 
 {
@@ -25,53 +44,6 @@ var keyReleased = function()
 	keys[keyCode] = false;
 }
 
-/*
-document.addEventListener('keydown', function(event) 
-{
-	var key = event.keyCode;
-	
-	if (key == 65)
-	{
-		movement.left = true;
-	}
-	else if (key == 87)
-	{
-		movement.up = true;
-	}
-	else if (key == 68)
-	{
-		movement.right = true;
-	}
-	else if (key == 83)
-	{
-		movement.down = true;
-	}
-}
-);
-
-
-document.addEventListener('keyup', function(event)
-{
-	var key = event.keyCode;
-	
-	if (key == 65)
-	{
-		movement.left = false;
-	}
-	else if (key == 87)
-	{
-		movement.up = false;
-	}
-	else if (key == 68)
-	{
-		movement.right = false;
-	}
-	else if (key == 83)
-	{
-		movement.down = false;
-	}
-});
-*/
 socket.emit('new player');
 
 setInterval(function() {
@@ -82,24 +54,43 @@ setInterval(function() {
 	socket.emit('keys', keys);
 }, 1000 / 60);
 
+setInterval(function() {
+	mouseDat.x = mouseX;
+	mouseDat.y = mouseY;
+	mouseDat.isPressed = mouseIsPressed;
+	socket.emit('mouse', mouseDat);	
+	mouseDat.isSwiped = false;
+}
+, 1000/60);
+
 this.setup = function() {
 	canvas = createCanvas(400,400);
 };
 
 this.draw = function(){	
 	background(0,0,0);
-	fill(0,255,0);
-		
-		//draw all clients
+	noStroke();	
 	for (var id in players) {
 		player = players[id];
+		fill(player.r,player.g,player.b);
 		rect(player.x, player.y, 10,10);
-	}		
+	}	
+	
+	for(var id in projectiles){
+		projectile = projectiles[id];
+		fill(player.r, player.g, player.b);
+		ellipse(projectile.x, projectile.y, projectile.size, projectile.size);
+	}
+	
 };
 
-//recieved updated client states
+//received updated client states
 socket.on('state', function(clients) {
 		players = clients;
+});
+
+socket.on('projectiles', function(data) {
+	   projectiles = data;
 });
 
 
