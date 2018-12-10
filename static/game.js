@@ -1,7 +1,4 @@
-
 var socket = io();
-
-
 socket.on('message', function(data) {
 	console.log(data);
 });
@@ -12,7 +9,6 @@ var movement = {
 	left: false,
 	right: false
 }
-
 var players = {};
 var projectiles = {};
 var keys = {};
@@ -35,6 +31,7 @@ Hammer(element).on("press", function () {
 });
 
 element.addEventListener("click", getClickPosition, false);
+
 //When the click happens, we have an event handler that will react to that click:
 function getClickPosition(e) {
     mouseDat.x = e.clientX;
@@ -51,12 +48,7 @@ var keyReleased = function()
 	keys[keyCode] = false;
 }
 
-
 socket.emit('new player');
-
-setInterval(function() {
-//socket.emit('movement', movement);
-}, 1000 / 60);
 
 setInterval(function() {
 	socket.emit('keys', keys);
@@ -74,8 +66,8 @@ this.setup = function() {
 
 this.draw = function(){	
 	background(0,0,50);
-
 	noStroke();	
+	
 	for (var id in players) {
 		player = players[id];
 		fill(player.r,player.g,player.b);
@@ -87,6 +79,7 @@ this.draw = function(){
 		fill(player.r, player.g, player.b);
 		ellipse(projectile.x, projectile.y, projectile.size, projectile.size);
 	}
+	
 	textSize(15);
 	fill(255,255,255);
 	text("Mr Hem's Multiplayer Node.JS test", 40,20);

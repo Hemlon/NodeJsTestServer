@@ -148,15 +148,6 @@ var projectile = function() {
 var projectiles = [];
 
 
-
-
-
-
-
-
-
-
-
 setInterval(function() {
   io.sockets.emit('message', 'server is still running');
 }, 1000);
