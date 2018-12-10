@@ -27,15 +27,9 @@ Hammer(element).on("swipe", function () {
 });
 
 Hammer(element).on("press", function () {	
-	//mouseDat.isPressed = true;
+	mouseDat.isPressed = true;
 });
 
-element.addEventListener("click", getClickPosition, false);
-
-//When the click happens, we have an event handler that will react to that click:
-function getClickPosition(e) {
-	mouseDat.isPressed = true;
-}
 
 var keyPressed = function() 
 {
