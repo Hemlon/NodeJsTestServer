@@ -1,7 +1,7 @@
 {
   "name": "testit10",
   "version": "1.0.0",
-  "description": "This sample demonstrates a tiny Hello World node.js app for [App Service Web App](https://docs.microsoft.com/azure/app-service-web).",
+  "description": "Multiplayer Game",
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.4",
