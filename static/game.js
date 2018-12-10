@@ -50,7 +50,10 @@ setInterval(function() {
 setInterval(function() {
 	mouseDat.x = mouseX;
 	mouseDat.y = mouseY;
-	//mouseDat.isPressed = mouseIsPressed
+	if (mouseDat.isSwiped)
+	{
+		mouseDat.isPressed = false;
+	}
 	socket.emit('mouse', mouseDat);	
 	//clear data
 	mouseDat.isSwiped = false;
