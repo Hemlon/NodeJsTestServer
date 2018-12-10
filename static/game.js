@@ -25,8 +25,13 @@ var mouseDat = {
 }
 
 var element = document.getElementsByTagName('BODY')[0];
-	Hammer(element).on("swipe", function () {	
+
+Hammer(element).on("swipe", function () {	
 		 mouseDat.isSwiped = true;
+});
+
+Hammer(element).on("press", function () {	
+		 mouseDat.isPressed = true;
 });
 
 
@@ -81,7 +86,7 @@ this.draw = function(){
 	}
 	textSize(15);
 	fill(255,255,255);
-	text("Mr Hem's Multiplayer Node.JS test", 70,20);
+	text("Mr Hem's Multiplayer Node.JS test", 40,20);
 };
 
 //received updated client states
