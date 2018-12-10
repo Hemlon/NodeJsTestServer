@@ -34,12 +34,6 @@ Hammer(element).on("press", function () {
 		 mouseDat.isPressed = true;
 });
 
-document.body.addEventListener('click', function()
-	{
-		mouseDat.x = event.clientX;
-		mouseDat.y = event.clientY;
-	}
-, true);
 
 var keyPressed = function() 
 {
