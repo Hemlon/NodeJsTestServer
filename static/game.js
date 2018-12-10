@@ -66,6 +66,9 @@ this.setup = function() {
 
 this.draw = function(){	
 	background(0,0,50);
+	textSize(100);
+	fill(255,255,255);
+	text("Mr Hem's Multiplayer Node.JS test");
 	noStroke();	
 	for (var id in players) {
 		player = players[id];
