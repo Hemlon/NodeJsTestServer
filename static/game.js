@@ -55,6 +55,7 @@ document.addEventListener('keyup', function(event)
 		movement.down = false;
 	}
 });
+
 socket.emit('new player');
 setInterval(function() {
   socket.emit('movement', movement);
