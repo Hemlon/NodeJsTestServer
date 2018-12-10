@@ -56,9 +56,9 @@ setInterval(function() {
 }, 1000 / 60);
 
 setInterval(function() {
-//	mouseDat.x = mouseX;
-//	mouseDat.y = mouseY;
-	//mouseDat.isPressed = mouseIsPressed
+	mouseDat.x = mouseX;
+	mouseDat.y = mouseY;
+	mouseDat.isPressed = mouseIsPressed
 	socket.emit('mouse', mouseDat);	
 	mouseDat.isSwiped = false;
 }
@@ -87,7 +87,7 @@ this.draw = function(){
 	textSize(15);
 	fill(255,255,255);
 	text("Mr Hem's Multiplayer Node.JS test", 40,20);
-	text(mouseDat.x + "," + mouseDat.y, 100,100);
+	text(mouseDat.x + "," + mouseDat.y + "," + mouseDat.isPressed, 100,100);
 };
 
 //received updated client states
