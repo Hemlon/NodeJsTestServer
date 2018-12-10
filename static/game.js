@@ -52,9 +52,9 @@ setInterval(function() {
 	mouseDat.y = mouseY;
 	//mouseDat.isPressed = mouseIsPressed
 	socket.emit('mouse', mouseDat);	
-	//clear some data
+	//clear data
 	mouseDat.isSwiped = false;
-	mouseDat.isPressed = false;
+	
 }
 , 1000/60);
 
