@@ -1,14 +1,31 @@
 <html>
+
   <head>
+  
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, 
+		user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<style type="text/css">
+		body { margin: 0; padding: 0; background: #000;}
+		canvas { display: block; margin: 0 auto; background: #fff; }
+	</style>
+	
     <title>A Multiplayer Game</title>
     <script src="/socket.io/socket.io.js"></script>
   </head>
+  
   <body>
     <canvas id="canvas"></canvas>
   </body>
+  
   <script src="/static/libraries/p5.js"></script>
   <script src="/static/libraries/matter.js"></script>
   <script src="/static/libraries/hammer.js"></script>
   <script src="/static/libraries/hemgine.js"></script>
   <script src="/static/game.js"></script>
+  
 </html>
