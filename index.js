@@ -168,8 +168,8 @@ var playerSpd = 3;
 //register a new players when they connect
 io.on('connection', function(socket) {
   socket.on('new player', function() {
-	  var posx = math.randInt(0,500);
-	  var posy = math.randInt(0,500);
+	  var posx = math.randInt(0,POP.WIDTH);
+	  var posy = math.randInt(0,POP.HEIGHT);
 	  var r=math.randInt(20,255);
 	  var g=math.randInt(20,255);
 	  var b=math.randInt(20,255);
