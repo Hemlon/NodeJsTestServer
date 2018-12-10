@@ -2,7 +2,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var socketIO = require('socket.io');
-
+/*
 var math = {
     upper: function(value, limit) { 
         if(value > limit) {
@@ -122,6 +122,7 @@ var projectile = function() {
 };
 
 var projectiles = [];
+*/
 
 var app = express();
 var server = http.Server(app);
@@ -141,6 +142,8 @@ server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
 });
 
+
+/*
 setInterval(function() {
   io.sockets.emit('message', 'server is still running');
 }, 1000);
@@ -222,4 +225,5 @@ setInterval(function() {
    io.sockets.emit('state', players);
 }, 1000 / 60);
 
+*/
 
