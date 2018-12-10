@@ -11,6 +11,21 @@ var movement = {
 	right: false
 }
 
+var players = {};
+
+var keys = {};
+
+var keyPressed = function() 
+{
+	keys[keyCode] = true;
+}
+
+var keyReleased = function()
+{
+	keys[keyCode] = false;
+}
+
+/*
 document.addEventListener('keydown', function(event) 
 {
 	var key = event.keyCode;
@@ -34,6 +49,7 @@ document.addEventListener('keydown', function(event)
 }
 );
 
+
 document.addEventListener('keyup', function(event)
 {
 	var key = event.keyCode;
@@ -55,26 +71,39 @@ document.addEventListener('keyup', function(event)
 		movement.down = false;
 	}
 });
-
+*/
 socket.emit('new player');
+
 setInterval(function() {
-  socket.emit('movement', movement);
+//socket.emit('movement', movement);
 }, 1000 / 60);
 
-var canvas = document.getElementById('canvas');
-canvas.width = 800;
-canvas.height = 600;
-var context = canvas.getContext('2d');
-socket.on('state', function(players) {
-  context.clearRect(0, 0, 800, 600);
-  context.fillStyle = 'green';
-  for (var id in players) {
-    var player = players[id];
-    context.beginPath();
-    context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
-    context.fill();
-  }
+setInterval(function() {
+	socket.emit('keys', keys);
+}, 1000 / 60);
+
+this.setup = function() {
+	canvas = createCanvas(400,400);
+};
+
+this.draw = function(){	
+	background(0,0,0);
+	fill(0,255,0);
+		
+		//draw all clients
+	for (var id in players) {
+		player = players[id];
+		rect(player.x, player.y, 10,10);
+	}		
+};
+
+//recieved updated client states
+socket.on('state', function(clients) {
+		players = clients;
 });
+
+
+
 
 
 	
