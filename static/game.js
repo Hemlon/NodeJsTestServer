@@ -39,10 +39,6 @@ element.addEventListener("click", getClickPosition, false);
 function getClickPosition(e) {
     mouseDat.x = e.clientX;
     mouseDat.y = e.clientY;
-	push();
-	fill(255,255,255);
-	
-	pop();
 }
 
 var keyPressed = function() 
