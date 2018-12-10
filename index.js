@@ -1,25 +1,31 @@
+//dependencies
 var express = require('express');
 var path = require('path');
 var http = require('http');
 var socketIO = require('socket.io');
+console.log("dependencies loaded");
+
 var app = express();
 var server = http.Server(app);
 var io = socketIO(server);
-var portnum = 1337;
-
+var portnum = process.env.PORT || 1337;
+console.log("packages created");
 
 app.set('port', portnum);
 app.use('/static', express.static(__dirname + '/static'));
+console.log("app directory static found");
 
 // Routing
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
+console.log("routing file completed");
 
 // Starts the server.
 server.listen(portnum , function() {
-  console.log('Starting server on port' + portnum);
+  console.log('Starting server on port%d', portnum);
 });
+
 
 /**/
 
