@@ -1,7 +1,8 @@
-var express = require('express');
+//var express = require('express');
 var http = require('http');
-var path = require('path');
-var socketIO = require('socket.io');
+//var path = require('path');
+//var socketIO = require('socket.io');
+
 /*
 var math = {
     upper: function(value, limit) { 
@@ -122,10 +123,10 @@ var projectile = function() {
 };
 
 var projectiles = [];
-*/
+
 
 var app = express();
-var server = http.Server(app);
+
 var io = socketIO(server);
 
 var portnum = 3000;
@@ -137,6 +138,9 @@ app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
 
+*/
+
+var server = http.Server(app);
 // Starts the server.
 server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
