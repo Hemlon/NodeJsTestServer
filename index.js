@@ -1,4 +1,34 @@
+
+
+var express = require('express');
+/*var path = require('path');
+var socketIO = require('socket.io');
+var server = http.Server(app);
+var app = express();
+var io = socketIO(server);
+var portnum = 5000;
+
+
+// Starts the server.
+app.set('port', portnum);
+app.use('/static', express.static(__dirname + '/static'));
+
+// Routing
+app.get('/', function(request, response) {
+  response.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
+server.listen(portnum , function() {
+  console.log('Starting server on port' + portnum);
+});
+*/
+
+
 var http = require('http');
+
+
+
 
 var server = http.createServer(function(request, response) {
 
@@ -139,31 +169,6 @@ var projectiles = [];
 
 */
 
-/*
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var socketIO = require('socket.io');
-var server = http.Server(app);
-var app = express();
-var io = socketIO(server);
-var portnum = 5000;
-
-
-// Starts the server.
-app.set('port', portnum);
-app.use('/static', express.static(__dirname + '/static'));
-
-// Routing
-app.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname, 'index.html'));
-});
-
-
-server.listen(portnum , function() {
-  console.log('Starting server on port' + portnum);
-});
-*/
 
 
 
