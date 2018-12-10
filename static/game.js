@@ -61,11 +61,11 @@ setInterval(function() {
 , 1000/60);
 
 this.setup = function() {
-	canvas = createCanvas(400,400);
+	canvas = createCanvas(POP.WIDTH,POP.HEIGHT);
 };
 
 this.draw = function(){	
-	background(0,0,0);
+	background(0,0,50);
 	noStroke();	
 	for (var id in players) {
 		player = players[id];
