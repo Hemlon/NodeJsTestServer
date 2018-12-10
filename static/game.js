@@ -1,5 +1,4 @@
 var socket = io();
-
 socket.on('message', function(data) {
 	console.log(data);
 });
@@ -31,7 +30,7 @@ Hammer(element).on("press", function () {
 	mouseDat.isPressed = true;
 });
 
-element.on("click", getClickPosition);
+//element.addEventListener("click", getClickPosition, false);
 
 //When the click happens, we have an event handler that will react to that click:
 function getClickPosition(e) {
@@ -84,7 +83,7 @@ this.draw = function(){
 	textSize(15);
 	fill(255,255,255);
 	text("Mr Hem's Multiplayer Node.JS test", 40,20);
-//	text(mouseDat.x + "," + mouseDat.y, 100,100);
+	text(mouseDat.x + "," + mouseDat.y, 100,100);
 };
 
 //received updated client states
