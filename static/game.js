@@ -1,4 +1,5 @@
 var socket = io();
+
 socket.on('message', function(data) {
 	console.log(data);
 });
@@ -30,7 +31,7 @@ Hammer(element).on("press", function () {
 	mouseDat.isPressed = true;
 });
 
-element.addEventListener("click", getClickPosition, false);
+element.on("click", getClickPosition);
 
 //When the click happens, we have an event handler that will react to that click:
 function getClickPosition(e) {
