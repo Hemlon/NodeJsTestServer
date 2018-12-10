@@ -36,8 +36,8 @@ Hammer(element).on("press", function () {
 
 document.body.addEventListener('click', function()
 	{
-		mouseDat.x = event.offsetX;
-		mouseDat.y = event.offsetY;
+		mouseDat.x = event.clientX;
+		mouseDat.y = event.clientY;
 	}
 , true);
 
