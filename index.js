@@ -179,8 +179,7 @@ socket.on('keys', function(data) {
 	
     var player = players[socket.id] || {};
 	
-	if (!mouse.isSwiped)
-	{
+	//handles keyboard
 		if (data[37]) {
 		  player.x -= playerSpd;
 		}
@@ -196,13 +195,8 @@ socket.on('keys', function(data) {
 		if (data[40]) {
 			player.y += playerSpd 
 		}
-		mouse.isSwiped = false;
-	}
-	else
-	{
-		mouseDat.x = player.x;
-		mouseDat.y = player.y;
-	}
+
+
 });
 
 socket.on('mouse', function(data) {
@@ -210,7 +204,7 @@ socket.on('mouse', function(data) {
     var player = players[socket.id] || {};
 	mouse = data;
 	
-	if(data.isPressed && player.x != data.x && player.y != data.y)
+	if(data.isPressed && player.x != data.x && player.y != data.y && !data.isSwiped)
 	{
 		motion.follow(player,data.x, data.y, playerSpd);	
 	}
