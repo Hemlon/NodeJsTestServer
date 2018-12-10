@@ -66,9 +66,7 @@ this.setup = function() {
 
 this.draw = function(){	
 	background(0,0,50);
-	textSize(100);
-	fill(255,255,255);
-	text("Mr Hem's Multiplayer Node.JS test");
+
 	noStroke();	
 	for (var id in players) {
 		player = players[id];
@@ -81,7 +79,9 @@ this.draw = function(){
 		fill(player.r, player.g, player.b);
 		ellipse(projectile.x, projectile.y, projectile.size, projectile.size);
 	}
-	
+	textSize(30);
+	fill(255,255,255);
+	text("Mr Hem's Multiplayer Node.JS test", 70,20);
 };
 
 //received updated client states
