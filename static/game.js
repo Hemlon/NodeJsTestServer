@@ -26,7 +26,7 @@ Hammer(element).on("swipe", function () {
 	mouseDat.isSwiped = true;
 });
 
-Hammer(element).on("press", function () {	
+Hammer(element).on("tap", function () {	
 	mouseDat.isPressed = true;
 });
 
