@@ -34,6 +34,13 @@ Hammer(element).on("press", function () {
 		 mouseDat.isPressed = true;
 });
 
+element.addEventListener("click", getClickPosition, false);
+//When the click happens, we have an event handler that will react to that click:
+function getClickPosition(e) {
+    mouseDat.x = e.clientX;
+    mouseDat.y = e.clientY;
+	console.log(e.clientX + "," + e.clientY);
+}
 
 var keyPressed = function() 
 {
