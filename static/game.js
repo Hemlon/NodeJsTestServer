@@ -79,7 +79,7 @@ this.draw = function(){
 		fill(player.r, player.g, player.b);
 		ellipse(projectile.x, projectile.y, projectile.size, projectile.size);
 	}
-	textSize(30);
+	textSize(15);
 	fill(255,255,255);
 	text("Mr Hem's Multiplayer Node.JS test", 70,20);
 };
