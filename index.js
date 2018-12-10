@@ -1,10 +1,11 @@
 
 
 var express = require('express');
-/*var path = require('path');
+var path = require('path');
 var socketIO = require('socket.io');
-var server = http.Server(app);
 var app = express();
+var server = http.Server(app);
+
 var io = socketIO(server);
 var portnum = 5000;
 
@@ -22,26 +23,7 @@ app.get('/', function(request, response) {
 server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
 });
-*/
-
-
-var http = require('http');
-
-
-
-
-var server = http.createServer(function(request, response) {
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
-
-});
-
-var port = process.env.PORT || 1337;
-server.listen(port);
-
-console.log("Server running at http://localhost:%d", port);
-
+/**/
 
 /*
 var math = {
