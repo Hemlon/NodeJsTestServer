@@ -136,6 +136,7 @@ var app = express();
 var io = socketIO(server);
 var portnum = 5000;
 
+/*
 // Starts the server.
 app.set('port', portnum);
 app.use('/static', express.static(__dirname + '/static'));
@@ -144,6 +145,7 @@ app.use('/static', express.static(__dirname + '/static'));
 app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, 'index.html'));
 });
+*/
 
 server.listen(portnum , function() {
   console.log('Starting server on port' + portnum);
