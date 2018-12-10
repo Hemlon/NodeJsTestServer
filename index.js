@@ -147,6 +147,7 @@ var projectile = function() {
 
 var projectiles = [];
 
+var mouse = {};
 
 setInterval(function() {
   io.sockets.emit('message', 'server is still running');
@@ -178,31 +179,35 @@ socket.on('keys', function(data) {
 	
     var player = players[socket.id] || {};
 	
-    if (data[37]) {
-      player.x -= playerSpd;
-    }
+	if (!mouse.isSwiped)
+	{
+		if (data[37]) {
+		  player.x -= playerSpd;
+		}
+		
+		if (data[38]) {
+		  player.y -= playerSpd; 
+		}
+		  
+		if (data[39]) {
+		  player.x += playerSpd;
+		}
 	
-    if (data[38]) {
-      player.y -= playerSpd; 
+		if (data[40]) {
+			player.y += playerSpd 
+		}
 	}
-	  
-    if (data[39]) {
-      player.x += playerSpd;
-    }
-	
-    if (data[40]) {
-      player.y += playerSpd 
-    }
-	
 });
-
 
 socket.on('mouse', function(data) {
 	
     var player = players[socket.id] || {};
-	
-	if(data.isPressed)
+	mouse = data;
+	if(data.isPressed && player.x != data.x && player.y != data.y)
+	{
 		motion.follow(player,data.x, data.y, playerSpd);
+	
+	}
 	
 	if(data.isSwiped)
 	{	
