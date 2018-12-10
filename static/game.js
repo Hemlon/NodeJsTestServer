@@ -1,6 +1,7 @@
+/*
 var socket = io();
 
-/*
+
 socket.on('message', function(data) {
 	console.log(data);
 });
@@ -29,9 +30,6 @@ var element = document.getElementsByTagName('BODY')[0];
 });
 
 
-
-
-
 var keyPressed = function() 
 {
 	keys[keyCode] = true;
@@ -41,6 +39,7 @@ var keyReleased = function()
 {
 	keys[keyCode] = false;
 }
+
 
 socket.emit('new player');
 
