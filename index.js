@@ -196,6 +196,7 @@ socket.on('keys', function(data) {
 		if (data[40]) {
 			player.y += playerSpd 
 		}
+		mouse.isSwiped = false;
 	}
 });
 
